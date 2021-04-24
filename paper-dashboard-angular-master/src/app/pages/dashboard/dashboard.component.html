@@ -1,0 +1,133 @@
+<div class="row">
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-globe text-warning"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Occupied</p>
+              <p class="card-title">{{memory}}
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-refresh" (click)="updateNow()"></i> Update Now
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card ">
+      <div class="card-header ">
+        <h5 class="card-title">Search</h5>
+      </div>
+      <div class="card-body ">
+        <div class="container">
+          <div>Select application</div>
+          <div class="row">
+            <div class="col">
+              <div ngbDropdown class="d-inline-block">
+                <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{selectedOption}}</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button (click)="selectedOption1(option)" *ngFor="let option of options" ngbDropdownItem>{{option}}</button>
+<!--                  <button ngbDropdownItem>Another Action</button>-->
+<!--                  <button ngbDropdownItem>Something else is here</button>-->
+                </div>
+              </div>
+              <button (click)="clicked1()" style="margin-left: 10px" class="btn">Search</button>
+
+            </div>
+
+            <div  class="dropdown">
+              <form #userlogin = "ngForm" (ngSubmit)="formsubmit(userlogin.value)">
+                <div *ngFor="let heading of tableHeadings">
+                  <!--                <br/>-->
+                  <div *ngIf="heading=='time'">
+                    <div style="float:left;padding-right:10px">
+                      <label class="col-form-label">Start Date</label>
+                      <br/>
+                      <input type="text" name="startDate" placeholder="MM/DD/YYYY" ngModel>
+                    </div>
+                    <div style="float:left">
+                      <label class="col-form-label" >Start Time</label>
+                      <br/>
+                      <input type="text" name="startTime" placeholder="HH:MM:SS" ngModel>
+                    </div>
+                    <br/><br/><br/>
+                  </div>
+
+                  <div *ngIf="heading=='time'">
+                    <div style="float:left;padding-right:10px">
+                      <label class="col-form-label">End Date</label>
+                      <br/>
+                      <input type="text" name="endDate" placeholder="MM/DD/YYYY" ngModel>
+                    </div>
+                    <div style="float:left">
+                      <label class="col-form-label">End Time</label>
+                      <br/>
+                      <input type="text" name="endTime" placeholder="HH:MM:SS" ngModel>
+                    </div>
+                  </div>
+                  <br/>
+                  <label class="col-form-label" *ngIf="heading!='time'">{{heading}} </label>
+                  <br/>
+                  <input type="text" name="{{heading}}" ngModel *ngIf="heading!='time'">
+                </div>
+
+                <input *ngIf="submitButtonFlag" class="btn" type = "submit" value = "submit">
+              </form>
+
+
+
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="fa fa-history"></i> Updated 3 minutes ago
+          </div>
+        </div>      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title"> Results</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary"  >
+            <th *ngFor="let heading of tableHeadings">
+              {{heading}}
+            </th>
+            </thead>
+            <tbody>
+            <tr *ngFor="let row of rows" [attr.bgcolor]="row.slice(-1)[0]?redColor:''">
+              <td *ngFor="let r of row.slice(0,row.length-1)">
+                {{r}}
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

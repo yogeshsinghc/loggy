@@ -1,0 +1,27 @@
+/dbserver/venv/*
+/dbserver/__pycache__/*
+/dbserver/.idea/*
+/log_package/venv/*
+/log_package/__pycache__/*
+/log_package/.idea/*
+/LoggyTestApp1/__pycache__/*
+/LoggyTestApp1/venv/*
+/LoggyTestApp1/.idea/*
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+paper-dashboard-angular-master/dist
+paper-dashboard-angular-master/tmp
+paper-dashboard-angular-master/out-tsc
+
+# dependencies
+paper-dashboard-angular-master/node_modules
+
+# IDEs and editors
+paper-dashboard-angular-master/.idea
+paper-dashboard-angular-master/.project
+paper-dashboard-angular-master/.classpath
+paper-dashboard-angular-master/.c9/
+paper-dashboard-angular-master/*.launch
+paper-dashboard-angular-master/.settings/
+paper-dashboard-angular-master/*.sublime-workspace

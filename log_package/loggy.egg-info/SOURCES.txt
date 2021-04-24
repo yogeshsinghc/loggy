@@ -1,0 +1,5 @@
+setup.py
+loggy.egg-info/PKG-INFO
+loggy.egg-info/SOURCES.txt
+loggy.egg-info/dependency_links.txt
+loggy.egg-info/top_level.txt
