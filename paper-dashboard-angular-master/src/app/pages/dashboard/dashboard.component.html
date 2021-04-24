@@ -51,42 +51,42 @@
             </div>
 
             <div  class="dropdown">
-              <form #userlogin = "ngForm" (ngSubmit)="formsubmit(userlogin.value)">
+              <form #userlogin = "ngForm" class="form-group" (ngSubmit)="formsubmit(userlogin.value)">
                 <div *ngFor="let heading of tableHeadings">
                   <!--                <br/>-->
                   <div *ngIf="heading=='time'">
                     <div style="float:left;padding-right:10px">
-                      <label class="col-form-label">Start Date</label>
+                      <label class="title" >Start Date</label>
                       <br/>
-                      <input type="text" name="startDate" placeholder="MM/DD/YYYY" ngModel>
+                      <input class="form-control" type="text" name="startDate" placeholder="MM/DD/YYYY" ngModel>
                     </div>
                     <div style="float:left">
-                      <label class="col-form-label" >Start Time</label>
+                      <label class="title">Start Time</label>
                       <br/>
-                      <input type="text" name="startTime" placeholder="HH:MM:SS" ngModel>
+                      <input class="form-control" type="text" name="startTime" placeholder="HH:MM:SS" ngModel>
                     </div>
                     <br/><br/><br/>
                   </div>
 
                   <div *ngIf="heading=='time'">
                     <div style="float:left;padding-right:10px">
-                      <label class="col-form-label">End Date</label>
+                      <label class="title">End Date</label>
                       <br/>
-                      <input type="text" name="endDate" placeholder="MM/DD/YYYY" ngModel>
+                      <input class="form-control" type="text" name="endDate" placeholder="MM/DD/YYYY" ngModel>
                     </div>
                     <div style="float:left">
-                      <label class="col-form-label">End Time</label>
+                      <label class="title">End Time</label>
                       <br/>
-                      <input type="text" name="endTime" placeholder="HH:MM:SS" ngModel>
+                      <input class="form-control" type="text" name="endTime" placeholder="HH:MM:SS" ngModel>
                     </div>
                   </div>
                   <br/>
-                  <label class="col-form-label" *ngIf="heading!='time'">{{heading}} </label>
+                  <label class="title"  *ngIf="heading!='time'">{{heading}} </label>
                   <br/>
-                  <input type="text" name="{{heading}}" ngModel *ngIf="heading!='time'">
+                  <input class="form-control" type="text" name="{{heading}}" ngModel *ngIf="heading!='time'">
                 </div>
 
-                <input *ngIf="submitButtonFlag" class="btn" type = "submit" value = "submit">
+                <input  class="form-control" *ngIf="submitButtonFlag" class="btn" type = "submit" value = "submit">
               </form>
 
 
