@@ -29,6 +29,7 @@ export class DashboardComponent implements OnInit {
   constructor(private backendService: BackendService) {
   }
   ngOnInit() {
+    this.memory = 0 +'KB'
     this.selectedOption = "select App"
     this.submitButtonFlag = false
     this.backendService.getMemory().subscribe(data=>{
